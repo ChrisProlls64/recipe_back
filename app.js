@@ -6,7 +6,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 
 // importation du code des sous routeurs
-import notesRouter from './routes/notes.js';
+import notesRouter from './routes/recipes.js';
 import usersRouter from './routes/users.js';
 
 var app = express();
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(json());
 
 // Initialisation du Router
-app.use('/notes', notesRouter);
+app.use('/recipes', notesRouter);
 app.use('/users/', usersRouter);
 app.get('/', (req, res) => res.send('et oui on vous souhaite la bienvenue!'));
 app.get('*', function(req, res){
